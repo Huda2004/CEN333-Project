@@ -1,0 +1,40 @@
+<m-container class="home">
+  <m-header class="header"></m-header>
+  <m-map 
+    class="map"
+    [zoomLevel]="10"
+    [lat]="lat"
+    [lng]="lng"
+    (click)="drawUserLocation()"
+    (mapInstance)="getMapInstance($event)">
+  </m-map>
+  <button style="margin-top: 150px" (click)="drawUserLocation()"> Current Location</button>
+  <button style="margin-top: 150px" (click)="storeUserLocation()"> Store Location</button>
+
+
+    <p>{{address}}</p>
+
+  <m-aha type="{{toast.type}}" header="{{toast.header}}" *ngIf="toast.ngIfControl">
+    {{toast.message}}
+  </m-aha>
+
+  <label >Select Time</label>
+  <select id="timeSelect" ></select>
+
+  <form class="pure-form-stacked pure-form" (click)="addItem()">
+    <label >Enter your name: </label>
+    <input type="text" placeholder="userName" [(ngModel)]="userName" [ngModelOptions]="{standalone: true}">
+    <label>Enter the name of the item:</label>
+    <input type="text" placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+    <label>Enter the image:</label>
+    <input type="file" id="file" (change)="onSelectImage($event)">
+    <label>Enter Description about the item:</label>
+    <input type="text" placeholder="Description" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" >
+    <button type="submit">Add Item</button> 
+  </form>
+  <ul>
+    <li *ngFor="let item of itemlist">
+      Title: {{ item.title }}, Description: {{ item.description }}
+    </li>
+  </ul>
+</m-container>

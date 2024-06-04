@@ -1,0 +1,14 @@
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px; /* Add margin between button containers */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

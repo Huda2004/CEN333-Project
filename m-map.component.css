@@ -1,0 +1,7 @@
+#map {
+    height: 50vh;
+    width: 50%; /* or any desired width */
+    margin: 0 auto;
+    position: relative; /* Add this line if it's not already positioned */
+    bottom: -80px; /* Adjust this value to make it go down */
+  }
